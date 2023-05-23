@@ -6,4 +6,6 @@
     <string name="continue_">Continue</string>
     <string name="edit_option">edit</string>
     <string name="notes">Notes</string>
+    <string name="enter_the_otp">Enter The OTP</string>
+    <string name="something_went_wrong">Something went wrong!</string>
 </resources>

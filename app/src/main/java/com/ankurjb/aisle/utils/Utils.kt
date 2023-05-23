@@ -1,6 +1,8 @@
 package com.ankurjb.aisle.utils
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
@@ -24,3 +26,8 @@ fun NavController.navigateTo(
         navigate(route, null, null)
     }
 }
+
+fun showToast(
+    context: Context,
+    message: String
+) = Toast.makeText(context, message, Toast.LENGTH_LONG).show()

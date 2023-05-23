@@ -1,10 +1,12 @@
 package com.ankurjb.aisle.utils
 
+import android.content.Context
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 
 @Composable
@@ -20,3 +22,11 @@ fun HorizontalSpacer(
 ) = Spacer(
     modifier = Modifier.width(width)
 )
+
+@Composable
+fun ShowToast(
+    message: String,
+    context: Context = LocalContext.current
+) {
+    showToast(context, message)
+}

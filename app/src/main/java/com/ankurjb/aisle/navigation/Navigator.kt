@@ -2,7 +2,8 @@ package com.ankurjb.aisle.navigation
 
 import androidx.core.os.bundleOf
 import androidx.navigation.NavHostController
-import com.ankurjb.aisle.model.PhoneNumber
+import com.ankurjb.aisle.common.model.PhoneNumber
+import com.ankurjb.aisle.features.otp.OtpViewModel
 import com.ankurjb.aisle.utils.navigateTo
 
 sealed class Navigator(val route: String) {
@@ -19,7 +20,7 @@ fun NavHostController.navigateToOtpScreen(
     phoneNumber: PhoneNumber
 ) = navigateTo(
     route = Navigator.OtpScreen.route,
-    args = bundleOf("PHONE_NUMBER" to phoneNumber)
+    args = bundleOf(OtpViewModel.PHONE_NUMBER to phoneNumber)
 )
 
 fun NavHostController.navigateToNotesScreen() = navigateTo(
