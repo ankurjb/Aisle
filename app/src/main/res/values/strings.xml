@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Aisle</string>
+    <string name="login_screen">Login Screen</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="continue_">Continue</string>
+    <string name="edit_option">edit</string>
+    <string name="notes">Notes</string>
 </resources>
