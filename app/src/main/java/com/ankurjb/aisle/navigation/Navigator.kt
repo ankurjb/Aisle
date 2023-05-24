@@ -12,7 +12,8 @@ sealed class Navigator(val route: String) {
     object NotesScreen : Navigator("notes_screen")
 
     companion object {
-        fun getStartNavigation() = LoginScreen.route
+        fun getStartNavigation(isAuthorised: Boolean) =
+            if (isAuthorised) NotesScreen.route else LoginScreen.route
     }
 }
 

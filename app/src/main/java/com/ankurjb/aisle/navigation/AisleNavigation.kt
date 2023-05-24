@@ -11,10 +11,11 @@ import com.ankurjb.aisle.features.otp.composable.OtpScreen
 
 @Composable
 fun AisleNavigation(
+    isAuthorised: Boolean,
     navController: NavHostController = rememberNavController()
 ) {
     NavHost(
-        startDestination = Navigator.getStartNavigation(),
+        startDestination = Navigator.getStartNavigation(isAuthorised),
         navController = navController
     ) {
         composable(route = Navigator.LoginScreen.route) {
