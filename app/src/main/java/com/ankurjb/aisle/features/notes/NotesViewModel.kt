@@ -48,6 +48,8 @@ class NotesViewModel @Inject constructor(
             _viewModelState.update {
                 it.copy(
                     heroProfile = mapper.toNotesHeroProfile(profile),
+                    interestedInYou = mapper.toInterestedProfiles(profile),
+                    upgradeAccount = profile.likes.canSeeProfile.not(),
                     isLoading = false
                 )
             }
