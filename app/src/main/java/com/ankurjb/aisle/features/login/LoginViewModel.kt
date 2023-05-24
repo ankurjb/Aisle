@@ -5,9 +5,9 @@ import androidx.lifecycle.viewModelScope
 import com.ankurjb.aisle.common.model.PhoneNumber
 import com.ankurjb.aisle.features.login.model.LoginUiState
 import com.ankurjb.aisle.features.login.model.LoginViewModelState
+import com.ankurjb.aisle.usecase.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -19,7 +19,9 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class LoginViewModel @Inject constructor() : ViewModel() {
+class LoginViewModel @Inject constructor(
+    private val useCase: LoginUseCase
+) : ViewModel() {
 
     private val _isError = MutableSharedFlow<Boolean>()
     val isError: SharedFlow<Boolean> = _isError
@@ -40,9 +42,12 @@ class LoginViewModel @Inject constructor() : ViewModel() {
         phoneNumber: PhoneNumber
     ) = viewModelScope.launch {
         _viewModelState.update { it.copy(isLoading = true, phoneNumber = phoneNumber) }
-
-        delay(2000L)
-        _isLoginAPISuccess.emit(true)
+        val result = useCase(phoneNumber)
+        if (result) {
+            _isLoginAPISuccess.emit(true)
+        } else {
+            _isError.emit(true)
+        }
         _viewModelState.update { it.copy(isLoading = false) }
     }
 }
