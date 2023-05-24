@@ -8,4 +8,7 @@
     <string name="notes">Notes</string>
     <string name="enter_the_otp">Enter The OTP</string>
     <string name="something_went_wrong">Something went wrong!</string>
+    <string name="interested_in_you">Interested In You</string>
+    <string name="premium_feature">Premium members can view all their likes at once</string>
+    <string name="upgrade">Upgrade</string>
 </resources>

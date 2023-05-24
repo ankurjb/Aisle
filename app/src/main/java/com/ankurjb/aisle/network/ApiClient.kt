@@ -8,6 +8,7 @@ import com.ankurjb.aisle.model.ResponsePhoneNumber
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiClient {
@@ -23,5 +24,7 @@ interface ApiClient {
     ): Response<ResponseOtp>
 
     @GET("users/test_profile_list")
-    suspend fun getProfileList(): Response<Profile>
+    suspend fun getProfileList(
+        @Header("Authorization") header: String?
+    ): Response<Profile>
 }

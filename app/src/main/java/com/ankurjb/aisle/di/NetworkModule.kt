@@ -16,10 +16,10 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providesNewsAPI(): ApiClient {
-        return Retrofit.Builder().baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiClient::class.java)
-    }
+    fun providesAPIClient(): ApiClient = Retrofit
+        .Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(ApiClient::class.java)
 }

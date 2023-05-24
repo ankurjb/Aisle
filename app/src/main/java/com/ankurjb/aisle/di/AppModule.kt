@@ -1,5 +1,7 @@
 package com.ankurjb.aisle.di
 
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import com.ankurjb.aisle.ApiMapper
 import com.ankurjb.aisle.network.ApiClient
 import com.ankurjb.aisle.repo.MainRepository
@@ -16,7 +18,12 @@ object AppModule {
     @Provides
     fun providesMainRepository(
         apiClient: ApiClient,
-        apiMapper: ApiMapper
-    ): MainRepository = MainRepositoryImpl(apiClient, apiMapper)
+        apiMapper: ApiMapper,
+        datastore: DataStore<Preferences>
+    ): MainRepository = MainRepositoryImpl(
+        apiClient = apiClient,
+        mapper = apiMapper,
+        dataStore = datastore
+    )
 
 }

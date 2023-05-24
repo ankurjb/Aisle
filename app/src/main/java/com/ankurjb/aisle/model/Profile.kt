@@ -30,7 +30,7 @@ data class Profile(
             @SerializedName("icebreakers")
             val icebreakers: Any,
             @SerializedName("instagram_images")
-            val instagramImages: Any,
+            val instagramImages: String?,
             @SerializedName("is_facebook_data_fetched")
             val isFacebookDataFetched: Boolean,
             @SerializedName("last_seen")

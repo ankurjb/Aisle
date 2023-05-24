@@ -8,7 +8,7 @@ data class LoginViewModelState(
     val isSuccess: Boolean = false,
     val phoneNumber: PhoneNumber = PhoneNumber(
         countryCode = "+91",
-        number = ""
+        number = "9876543212"
     )
 ) {
     fun toUiState() = LoginUiState(

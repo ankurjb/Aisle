@@ -1,5 +1,6 @@
 package com.ankurjb.aisle.ui.theme
 
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
@@ -36,5 +37,19 @@ val textStyleMedium = TextStyle(
     color = TextBlack,
     lineHeight = 21.sp,
     fontSize = 18.sp,
+    fontWeight = FontWeight.SemiBold
+)
+
+val textStyleName = TextStyle(
+    color = Color.White,
+    lineHeight = 22.sp,
+    fontSize = 22.sp,
+    fontWeight = FontWeight.ExtraBold
+)
+
+val textStyleSubText = TextStyle(
+    color = TextGrey,
+    lineHeight = 17.89.sp,
+    fontSize = 15.sp,
     fontWeight = FontWeight.SemiBold
 )

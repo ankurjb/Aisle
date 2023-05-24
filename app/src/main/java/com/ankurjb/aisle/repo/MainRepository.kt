@@ -1,6 +1,7 @@
 package com.ankurjb.aisle.repo
 
 import com.ankurjb.aisle.common.model.PhoneNumber
+import com.ankurjb.aisle.model.Profile
 
 interface MainRepository {
 
@@ -11,5 +12,5 @@ interface MainRepository {
         otp: String
     ): String?
 
-    suspend fun getAllProfiles()
+    suspend fun getAllProfiles(): Profile?
 }
